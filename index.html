@@ -204,10 +204,10 @@
             const service = document.getElementById('service').value;
             const recipient = document.getElementById('recipient').value;
 
-            const whatsappMessage = `Name: ${name}%0AContact: ${contact}%0AWhatsApp: ${whatsapp}%0ACity: ${city}%0AAddress: ${address}%0AService: ${service}%0ARecipient: ${recipient}`;
-            const groupLink = `https://chat.whatsapp.com/Ex7VqCLKPwDJs8thlO96yR`;
-            const messageLink = `https://api.whatsapp.com/send?text=${whatsappMessage} Join group here: ${groupLink}`;
+            const whatsappMessage = `Name: ${name}%0AContact: ${contact}%0AWhatsApp: ${whatsapp}%0ACity: ${city}%0AAddress: ${address}%0AService: ${service}%0ARecipient: ${recipient}%0AJoin the group here: https://chat.whatsapp.com/Ex7VqCLKPwDJs8thlO96yR`;
+            const messageLink = `https://api.whatsapp.com/send?text=${whatsappMessage}`;
 
+            // Open WhatsApp to send the message
             window.open(messageLink, '_blank');
         });
     </script>
