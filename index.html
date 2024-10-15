@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Massage Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .background-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #f7d1c9, #f0a1b2, #f9c5d1, #f8b1bb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff7e5f;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            box-shadow: 0px 0px 10px rgba(255, 126, 95, 0.5);
+            border-color: #ff7e5f;
+        }
+        .submit-btn {
+            background-color: #ff7e5f;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #eb6349;
+            transform: translateY(-3px);
+        }
+        .description {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .description p {
+            margin-bottom: 8px;
+        }
+        .description strong {
+            color: #ff7e5f;
+        }
+        .description-urdu {
+            text-align: right;
+            font-size: 14px;
+            color: #555;
+            font-family: 'Jameel Noori Nastaleeq', serif;
+        }
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+            .submit-btn {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="form-container">
+        <h2>Home Massage Service</h2>
+
+        <div class="description">
+            <p><strong>How it works:</strong> After filling out the form, you'll be directed to WhatsApp to send your details directly to us. Just click "Submit" to start!</p>
+        </div>
+        <div class="description-urdu">
+            <p><strong>یہ کیسے کام کرتا ہے:</strong> فارم میں اپنی معلومات بھرنے کے بعد آپ کو واٹس ایپ پر منتقل کیا جائے گا، جہاں آپ کی فراہم کردہ معلومات براہ راست ہمارے پاس بھیجی جائیں گی۔ بس "Submit" پر کلک کریں!</p>
+        </div>
+
+        <form id="massageForm">
+            <div class="form-group">
+                <label for="name">Full Name / نام</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number / رابطہ نمبر</label>
+                <input type="tel" id="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsapp">WhatsApp Number / واٹس ایپ نمبر</label>
+                <input type="tel" id="whatsapp" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City / شہر</label>
+                <select id="city" required>
+                    <option value="">Select City</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Quetta">Quetta</option>
+                    <option value="Sialkot">Sialkot</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Full Address / مکمل پتہ</label>
+                <input type="text" id="address" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Which Service Do You Want? / آپ کو کونسی سروس چاہیے؟</label>
+                <select id="service" required>
+                    <option value="">Select </option>
+                    <option value="neck">Neck Massage / گردن</option>
+                    <option value="arm">Arm Massage / بازو</option>
+                    <option value="breast">Breast Massage / چھاتی</option>
+                    <option value="belly">Belly Massage / پیٹ</option>
+                    <option value="back">Back Massage / کمر</option>
+                    <option value="hip">Hip Massage / کولہے</option>
+                    <option value="legs">Legs Massage / ٹانگیں</option>
+                    <option value="upper_body">Upper Body Massage / اوپری جسم</option>
+                    <option value="lower_body">Lower Body Massage / نچلا جسم</option>
+                    <option value="other">Other Services / دیگر خدمات</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="recipient">Who Needs the Service? / سروس کس کو چاہیے؟</label>
+                <select id="recipient" required>
+                    <option value="female">Female / عورت</option>
+                    <option value="couple">Couple / جوڑا</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Submit / جمع کریں</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('massageForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+            const service = document.getElementById('service').value;
+            const recipient = document.getElementById('recipient').value;
+
+            const whatsappMessage = `Name: ${name}%0AContact: ${contact}%0AWhatsApp: ${whatsapp}%0ACity: ${city}%0AAddress: ${address}%0AService: ${service}%0ARecipient: ${recipient}`;
+            const groupLink = `https://chat.whatsapp.com/Ex7VqCLKPwDJs8thlO96yR`;
+            const messageLink = `https://api.whatsapp.com/send?text=${whatsappMessage} Join group here: ${groupLink}`;
+
+            window.open(messageLink, '_blank');
+        });
+    </script>
+</body>
+</html>
